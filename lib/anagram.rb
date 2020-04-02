@@ -2,12 +2,16 @@ require "pry"
 class Anagram
   attr_accessor :detector
   @list = []
+  @word = []
   
-  def inistialize(words)
-    @list = words
+  def inistialize(word, list)
+    @word = word
+    @list = list
   end
   
   def detector(list)
-    binding.pry
+    @list.collect |i, index|
+    @word.collect |letter|
+    @list
   end
 end
