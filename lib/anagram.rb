@@ -1,20 +1,14 @@
 require "pry"
 class Anagram
-  attr_accessor :detector
-  @list = []
-  @word = []
+  attr_accessor :word
   
   def inistialize(word, list)
     @word = word
-    @list = list
   end
   
-  def detector(list)
-    result = []
-    @list.collect |i, index|
-    @word.collect |letter|
-    if @list[i][index] == @word[letter]
-      result << @list[i]
+  def detector(word_array)
+    word_array.select do |word|
+      word.split("").sort == @word.split("").sort
     end
   end
 end
