@@ -10,8 +10,11 @@ class Anagram
   end
   
   def detector(list)
+    result = []
     @list.collect |i, index|
     @word.collect |letter|
-    @list
+    if @list[i][index] == @word[letter]
+      result << @list[i]
+    end
   end
 end
